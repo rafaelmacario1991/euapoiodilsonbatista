@@ -1,0 +1,18 @@
+# Claude Code
+.claude/
+
+# Deploy temporários
+deploy/*.bak
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Node (se algum dia usar)
+node_modules/

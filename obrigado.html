@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado! — Eu Apoio Dilson Batista</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #080e1c;
+      --gold:   #f5c542;
+      --red:    #e63030;
+      --wa:     #25d366;
+      --white:  #ffffff;
+      --text:   #d4dff0;
+      --muted:  #7a8eaa;
+      --border: rgba(255,255,255,0.08);
+      --border-gold: rgba(245,197,66,0.25);
+      --r: 10px;
+      --ff-d: 'Oswald', sans-serif;
+      --ff-b: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--ff-b);
+      background: linear-gradient(135deg, #05091a 0%, #0b1630 55%, #05091a 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .ty__icon {
+      font-size: 4.5rem;
+      margin-bottom: 1.25rem;
+      animation: popIn .5s cubic-bezier(.34,1.56,.64,1) both;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    .ty__badge {
+      display: inline-block;
+      background: rgba(245,197,66,.1);
+      border: 1px solid var(--border-gold);
+      color: var(--gold);
+      font-family: var(--ff-d);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      padding: .4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp .5s .1s both;
+    }
+
+    .ty__title {
+      font-family: var(--ff-d);
+      font-size: clamp(2.2rem, 7vw, 3.8rem);
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      animation: fadeUp .5s .2s both;
+    }
+
+    .ty__title span { color: var(--gold); }
+
+    .ty__sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      animation: fadeUp .5s .3s both;
+    }
+
+    .ty__share-label {
+      font-family: var(--ff-d);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 1rem;
+      animation: fadeUp .5s .35s both;
+    }
+
+    .ty__btns {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      width: 100%;
+      max-width: 400px;
+      animation: fadeUp .5s .4s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      padding: .95rem 1.75rem;
+      border-radius: var(--r);
+      font-family: var(--ff-b);
+      font-size: .95rem;
+      font-weight: 600;
+      transition: transform .15s, opacity .15s;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn--wa {
+      background: var(--wa);
+      color: var(--white);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-family: var(--ff-d);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .btn--back {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,.15);
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .btn--back:hover { border-color: rgba(255,255,255,.35); color: var(--white); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ty__icon">✊</div>
+  <div class="ty__badge">ASSINATURA CONFIRMADA</div>
+
+  <h1 class="ty__title">
+    Obrigado,<br />
+    <span id="nome-display">apoiador</span>!
+  </h1>
+
+  <p class="ty__sub">
+    Sua assinatura foi registrada com sucesso.<br />
+    Agora compartilhe com amigos e família — juntos chegamos a <strong style="color:var(--gold)">30.000 apoiadores</strong>!
+  </p>
+
+  <p class="ty__share-label">📢 Espalhe a mensagem:</p>
+
+  <div class="ty__btns">
+    <a id="wa-share" href="#" target="_blank" rel="noopener noreferrer" class="btn btn--wa">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.533 5.856L.057 23.057a1 1 0 0 0 1.243 1.206l5.35-1.523A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.869 9.869 0 0 1-5.031-1.378l-.36-.214-3.733 1.063 1.032-3.64-.234-.374A9.856 9.856 0 0 1 2.118 12C2.118 6.533 6.533 2.118 12 2.118c5.466 0 9.882 4.415 9.882 9.882 0 5.466-4.416 9.882-9.882 9.882z"/>
+      </svg>
+      COMPARTILHAR NO WHATSAPP
+    </a>
+    <a href="index.html" class="btn btn--back">← Voltar à página do abaixo-assinado</a>
+  </div>
+
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const nomeCompleto = params.get('nome') || '';
+      const primeiroNome = nomeCompleto.split(' ')[0];
+
+      const elNome = document.getElementById('nome-display');
+      if (elNome && primeiroNome) elNome.textContent = primeiroNome;
+
+      // Monta link de compartilhamento com URL da página principal
+      const baseUrl = window.location.origin + window.location.pathname.replace('obrigado.html', 'index.html');
+      const msg = encodeURIComponent(
+        `✊ Eu assinei o abaixo-assinado e apoio Dilson Batista contra a Máfia do Reboque em Recife!\n\nVocê também pode apoiar: ${baseUrl}`
+      );
+      const waShare = document.getElementById('wa-share');
+      if (waShare) waShare.href = `https://wa.me/?text=${msg}`;
+    }());
+  </script>
+
+</body>
+</html>

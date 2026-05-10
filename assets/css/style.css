@@ -1,0 +1,1015 @@
+/* =============================================
+   EU APOIO DILSON BATISTA — Petition Page
+   ============================================= */
+
+/* ─── RESET ──────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:          #080e1c;
+  --surface:     #0d1626;
+  --surface2:    #121f35;
+  --surface3:    #1a2d4a;
+  --gold:        #f5c542;
+  --gold-light:  #fdd96b;
+  --gold-glow:   rgba(245, 197, 66, 0.18);
+  --red:         #e63030;
+  --red-dark:    #b91c1c;
+  --red-glow:    rgba(230, 48, 48, 0.14);
+  --green:       #22c55e;
+  --wa:          #25d366;
+  --white:       #ffffff;
+  --text:        #d4dff0;
+  --text-muted:  #7a8eaa;
+  --border:      rgba(255, 255, 255, 0.07);
+  --border-gold: rgba(245, 197, 66, 0.25);
+
+  --ff-display: 'Oswald', sans-serif;
+  --ff-body:    'Inter', sans-serif;
+
+  --max-w: 1100px;
+  --r:     10px;
+  --sh:    0 4px 32px rgba(0, 0, 0, 0.55);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--ff-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img  { display: block; max-width: 100%; }
+a    { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; font-family: inherit; }
+
+/* ─── CONTAINER ──────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ─── BUTTONS ────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: 1rem 2rem;
+  border-radius: var(--r);
+  font-family: var(--ff-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover  { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn--gold {
+  background: var(--gold);
+  color: #0a0d14;
+  box-shadow: 0 4px 24px rgba(245, 197, 66, 0.38);
+}
+.btn--gold:hover {
+  background: var(--gold-light);
+  box-shadow: 0 6px 32px rgba(245, 197, 66, 0.55);
+}
+
+.btn--petition {
+  background: var(--red);
+  color: var(--white);
+  font-size: 1.15rem;
+  padding: 1.15rem 2.5rem;
+  width: 100%;
+  border-radius: var(--r);
+  box-shadow: 0 4px 24px rgba(230, 48, 48, 0.4);
+}
+.btn--petition:hover {
+  background: var(--red-dark);
+  box-shadow: 0 6px 32px rgba(230, 48, 48, 0.58);
+}
+
+.btn--wa {
+  background: var(--wa);
+  color: var(--white);
+  font-family: var(--ff-body);
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: .9rem 2rem;
+}
+
+.btn--hero { font-size: 1.05rem; padding: 1.1rem 2.5rem; }
+
+.btn--sticky {
+  width: 100%;
+  padding: .9rem 1.5rem;
+  font-size: .95rem;
+}
+
+/* ─── HERO ───────────────────────────────────── */
+.hero {
+  position: relative;
+  padding: 5rem 0 4.5rem;
+  background: linear-gradient(135deg, #05091a 0%, #0b1630 55%, #05091a 100%);
+  overflow: hidden;
+}
+
+.hero__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero__glow--gold {
+  width: 500px; height: 500px;
+  top: -100px; right: -50px;
+  background: var(--gold-glow);
+}
+.hero__glow--red {
+  width: 400px; height: 400px;
+  bottom: -100px; left: -80px;
+  background: var(--red-glow);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Photo */
+.hero__photo-side { display: flex; justify-content: center; }
+
+.hero__photo-frame {
+  position: relative;
+  width: min(360px, 100%);
+}
+
+.hero__photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 18px;
+  background: linear-gradient(140deg, var(--gold) 0%, transparent 45%, var(--red) 100%);
+  z-index: 0;
+}
+
+.hero__photo {
+  position: relative;
+  z-index: 1;
+  border-radius: 16px;
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  object-position: top center;
+  filter: saturate(1.08) contrast(1.05);
+}
+
+/* Text */
+.hero__badge-top {
+  display: inline-block;
+  background: rgba(245, 197, 66, 0.1);
+  border: 1px solid var(--border-gold);
+  color: var(--gold);
+  font-family: var(--ff-body);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: .4rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.hero__eu-apoio {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: .25rem;
+}
+
+.hero__name {
+  font-family: var(--ff-display);
+  font-size: clamp(3.5rem, 7.5vw, 6.5rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: .88;
+  text-transform: uppercase;
+  letter-spacing: -.02em;
+  margin-bottom: 1.5rem;
+}
+
+.hero__separator {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .9rem;
+}
+.hero__sep-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.hero__sep-label {
+  font-family: var(--ff-display);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.hero__enemy {
+  font-family: var(--ff-display);
+  font-size: clamp(1.6rem, 3.8vw, 2.6rem);
+  font-weight: 700;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  line-height: 1.1;
+  margin-bottom: .35rem;
+}
+
+.hero__defense {
+  font-size: .98rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.hero__counter-box {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .65rem;
+  background: rgba(245, 197, 66, 0.08);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--r);
+  padding: .75rem 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.hero__counter-num {
+  font-family: var(--ff-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  min-width: 4ch;
+  text-align: right;
+}
+
+.hero__counter-label {
+  font-size: .82rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.hero__sub-note {
+  font-size: .78rem;
+  color: var(--text-muted);
+  margin-top: .9rem;
+  letter-spacing: .04em;
+}
+
+/* ─── ALERT STRIP ────────────────────────────── */
+.alert-strip {
+  background: var(--red-dark);
+  padding: .85rem 0;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.55;
+}
+
+.alert-strip .container { padding-top: 0; padding-bottom: 0; }
+
+.alert-strip--censura {
+  background: #1a0505;
+  border-top: 2px solid var(--red);
+  border-bottom: 2px solid var(--red);
+  padding: 1rem 0;
+}
+
+.alert-strip__line { line-height: 1.6; }
+
+.alert-strip__line--top {
+  font-size: .95rem;
+  letter-spacing: .02em;
+  margin-bottom: .35rem;
+  color: #ff6b6b;
+}
+
+/* ─── PERSECUTION / REDES ───────────────────── */
+.persecution {
+  background: #05091a;
+  border-top: 1px solid rgba(230,48,48,.2);
+  border-bottom: 1px solid rgba(230,48,48,.2);
+  padding: 1.75rem 0;
+}
+
+.persecution__title {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 1.25rem;
+  letter-spacing: .02em;
+}
+
+.persecution__accounts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.persecution__sep {
+  font-size: 1.4rem;
+  color: rgba(255,255,255,.2);
+  flex-shrink: 0;
+}
+
+.persecution__account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--r);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  text-align: center;
+  min-width: 190px;
+  transition: border-color .2s;
+}
+
+.persecution__account--dead {
+  opacity: .55;
+  filter: grayscale(.4);
+}
+
+.persecution__account--risk {
+  border-color: rgba(245,167,0,.25);
+}
+
+.persecution__account--active {
+  border-color: rgba(34,197,94,.3);
+  background: rgba(34,197,94,.04);
+}
+
+.persecution__badge {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.persecution__account--risk   .persecution__badge { color: #f5a623; }
+.persecution__account--active .persecution__badge { color: #22c55e; }
+
+.persecution__handle {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: .02em;
+}
+
+.persecution__handle--dead { text-decoration: line-through; color: var(--text-muted); }
+
+.persecution__handle--link:hover { color: var(--gold); text-decoration: none; }
+
+.persecution__handle--gold { color: var(--gold); }
+
+.persecution__desc {
+  font-size: .76rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.btn--instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin-top: .35rem;
+  background: linear-gradient(135deg, #833ab4 0%, #c13584 40%, #f56040 75%, #fcaf45 100%);
+  color: var(--white);
+  font-family: var(--ff-display);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .55rem 1.1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: opacity .2s, transform .15s;
+  box-shadow: 0 3px 14px rgba(193,53,132,.35);
+}
+
+.btn--instagram:hover {
+  opacity: .9;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .persecution__accounts { flex-direction: column; align-items: stretch; }
+  .persecution__sep { transform: rotate(90deg); align-self: center; }
+  .persecution__account { min-width: unset; }
+}
+
+/* ─── SECTION BASE ───────────────────────────── */
+.section-tag {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: .35rem .9rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+  margin-bottom: .9rem;
+}
+
+.section-tag--red {
+  background: rgba(230, 48, 48, 0.14);
+  color: var(--red);
+}
+
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  line-height: 1.12;
+  margin-bottom: 1rem;
+}
+
+.section-lead {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 640px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.text-gold { color: var(--gold); }
+
+/* ─── PROBLEM SECTION ────────────────────────── */
+.problem {
+  padding: 5.5rem 0;
+  background: var(--surface);
+}
+
+.problem > .container { text-align: center; }
+.problem .section-lead { margin-inline: auto; }
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.problem-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 1.75rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.problem-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(230, 48, 48, 0.3);
+}
+.problem-card:hover::after { transform: scaleX(1); }
+
+.problem-card__icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: .8rem;
+}
+
+.problem-card__title {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: .6rem;
+}
+
+.problem-card__text {
+  font-size: .88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ─── CANDIDATE SECTION ──────────────────────── */
+.candidate {
+  padding: 5.5rem 0;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.candidate::before {
+  content: '';
+  position: absolute;
+  right: -250px; top: -200px;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 197, 66, 0.05) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.candidate__layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.candidate__photo-wrap { position: relative; }
+
+.candidate__photo {
+  border-radius: 16px;
+  width: 100%;
+  height: 490px;
+  object-fit: cover;
+  object-position: top center;
+  filter: saturate(1.1) contrast(1.03);
+  box-shadow: var(--sh);
+}
+
+.candidate__name-tag {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #0a0d14;
+  font-family: var(--ff-display);
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .45rem 1.6rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  box-shadow: 0 2px 12px rgba(245, 197, 66, 0.4);
+}
+
+.candidate__bio {
+  font-size: .98rem;
+  color: var(--text);
+  line-height: 1.78;
+  margin-bottom: 1rem;
+}
+
+.commitments {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  margin-top: 1.75rem;
+}
+
+.commitment-item {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  font-size: .92rem;
+  color: var(--text);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .7rem 1rem;
+  transition: border-color .2s;
+}
+
+.commitment-item:hover { border-color: rgba(245, 197, 66, 0.2); }
+
+.commitment-item__icon { font-size: 1rem; flex-shrink: 0; margin-top: .05rem; }
+
+/* ─── PETITION SECTION ───────────────────────── */
+.petition {
+  padding: 5.5rem 0;
+  background: var(--surface);
+}
+
+.petition > .container { text-align: center; }
+
+/* Progress Bar */
+.petition__progress {
+  max-width: 580px;
+  margin: 2rem auto 0;
+}
+
+.petition__progress-bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: .55rem;
+}
+
+.petition__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+  border-radius: 50px;
+  transition: width 1s cubic-bezier(.25,.8,.25,1);
+}
+
+.petition__progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: .8rem;
+  color: var(--text-muted);
+}
+
+.petition__goal strong { color: var(--gold); }
+
+/* Declaration */
+.petition__declaration {
+  max-width: 680px;
+  margin: 2.25rem auto 2.5rem;
+  padding: 1.5rem 2rem;
+  background: rgba(245, 197, 66, 0.06);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 var(--r) var(--r) 0;
+  font-size: 1rem;
+  color: var(--text);
+  font-style: italic;
+  text-align: left;
+  line-height: 1.75;
+}
+
+/* Form */
+.petition-form {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-row { margin-bottom: 1.1rem; }
+
+.form-row--2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.form-label {
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+}
+
+.form-input {
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  padding: .88rem 1rem;
+  font-family: var(--ff-body);
+  font-size: 1rem;
+  color: var(--white);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  width: 100%;
+}
+
+.form-input::placeholder { color: var(--text-muted); opacity: .5; }
+
+.form-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(245, 197, 66, 0.1);
+}
+
+.form-input--error { border-color: var(--red) !important; }
+
+.form-error {
+  font-size: .78rem;
+  color: var(--red);
+  display: none;
+}
+
+.btn--petition { margin-top: 1.5rem; }
+
+.form-privacy {
+  font-size: .76rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 1rem;
+  line-height: 1.65;
+}
+
+/* ─── VIDEO SECTION ─────────────────────────── */
+.video-section {
+  padding: 5rem 0 4rem;
+  background: var(--bg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(230,48,48,.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.video-section > .container { position: relative; z-index: 1; }
+
+.video-section__sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto 2.25rem;
+  line-height: 1.7;
+}
+
+.video-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  max-width: 540px;
+  width: 100%;
+  /* evita layout shift antes do embed carregar */
+  min-height: 580px;
+  align-items: flex-start;
+}
+
+/* Contorno do embed Instagram no tema escuro */
+.video-wrap .instagram-media {
+  border-radius: 12px !important;
+  box-shadow: 0 8px 40px rgba(0,0,0,.6) !important;
+  width: 100% !important;
+}
+
+.btn--video-cta {
+  display: inline-flex;
+  max-width: 440px;
+  width: 100%;
+}
+
+@media (max-width: 580px) {
+  .video-wrap { min-height: 420px; }
+}
+
+/* ─── FAQ SECTION ───────────────────────────── */
+.faq {
+  padding: 5rem 0;
+  background: var(--surface2);
+}
+
+.faq__list {
+  max-width: 760px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.faq__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  transition: border-color .2s;
+}
+
+.faq__item[open] { border-color: var(--border-gold); }
+
+.faq__question {
+  padding: 1.1rem 1.4rem;
+  font-size: .98rem;
+  font-weight: 600;
+  color: var(--white);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+  transition: color .2s;
+}
+
+.faq__question::-webkit-details-marker { display: none; }
+
+.faq__question::after {
+  content: '+';
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--gold);
+  flex-shrink: 0;
+  transition: transform .25s;
+  line-height: 1;
+}
+
+.faq__item[open] .faq__question::after { transform: rotate(45deg); }
+.faq__item[open] .faq__question { color: var(--gold); }
+
+.faq__answer {
+  padding: 0 1.4rem 1.1rem;
+  font-size: .92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+  padding-top: .9rem;
+}
+
+.faq__answer a { color: var(--gold); }
+
+/* ─── FOOTER LINKS ───────────────────────────── */
+.footer__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: .6rem 0;
+  font-size: .8rem;
+}
+
+.footer__links a {
+  color: var(--text-muted);
+  transition: color .2s;
+}
+
+.footer__links a:hover { color: var(--gold); }
+
+.footer__updated { font-size: .72rem !important; opacity: .45; margin-top: .25rem; }
+
+/* ─── FORM PRIVACY LINK ───────────────────────── */
+.form-privacy a { color: var(--gold); text-decoration: underline; }
+
+/* ─── SHARE SECTION ──────────────────────────── */
+.share-section {
+  padding: 4.5rem 0;
+  background: var(--bg);
+  text-align: center;
+}
+
+.share-section__title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+}
+
+.share-section__sub {
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  font-size: .98rem;
+}
+
+/* ─── FOOTER ─────────────────────────────────── */
+.footer {
+  background: #04070f;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer p {
+  font-size: .84rem;
+  color: var(--text-muted);
+  margin-bottom: .3rem;
+}
+
+.footer__legal { font-size: .72rem !important; opacity: .55; }
+
+/* ─── STICKY CTA ─────────────────────────────── */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(13, 22, 38, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: .75rem 1rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  transform: translateY(100%);
+  transition: transform .3s ease;
+  display: none;
+}
+
+.sticky-cta--visible { transform: translateY(0); }
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 960px) {
+  .problem-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 800px) {
+  .candidate__layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .candidate__photo {
+    height: 350px;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .candidate__content { text-align: center; }
+  .commitments { align-items: flex-start; text-align: left; }
+}
+
+@media (max-width: 767px) {
+  .sticky-cta { display: block; }
+
+  .hero { padding: 3.5rem 0 3rem; }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero__photo-frame {
+    width: min(260px, 80%);
+    margin: 0 auto;
+  }
+
+  .hero__photo { height: 300px; }
+
+  .hero__counter-box { margin-inline: auto; }
+
+  .hero__separator { max-width: 320px; margin-inline: auto; }
+
+  .petition__declaration {
+    border-left: none;
+    border-top: 4px solid var(--gold);
+    border-radius: var(--r);
+    text-align: center;
+  }
+
+  .form-row--2col { grid-template-columns: 1fr; }
+
+  .problem-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero__name { font-size: 3.2rem; }
+  .hero__enemy { font-size: 1.5rem; }
+  .hero__eu-apoio { font-size: 1.1rem; }
+  .btn--hero { font-size: .95rem; padding: 1rem 1.75rem; }
+  .btn--petition { font-size: 1rem; padding: 1.05rem 1.5rem; }
+}

@@ -1,0 +1,51 @@
+# Eu Apoio Dilson Batista — llms.txt
+# Context file for AI systems — https://llmstxt.org
+# Last updated: 2026-05-10
+
+## O que é esta página
+
+Esta é uma página oficial de abaixo-assinado digital em apoio a Dilson Batista,
+candidato comprometido com a população de Recife-PE na luta contra a "Máfia do Reboque".
+
+## Sobre o candidato
+
+**Nome:** Dilson Batista
+**Cidade:** Recife, Pernambuco, Brasil
+**Causa:** Combate aos abusos de guinchos e depósitos de veículos em Recife
+**Proposta principal:** Regulamentação de tarifas, criação de canal de denúncias e fiscalização permanente
+
+## O problema: Máfia do Reboque em Recife
+
+A Máfia do Reboque é um sistema de guinchos e depósitos de veículos que:
+- Cobra tarifas abusivas sem tabela regulamentada
+- Retém veículos como reféns em depósitos com diárias abusivas
+- Supostamente opera com conluio de agentes públicos
+- Atua sem fiscalização efetiva em Recife-PE
+
+## Propostas de Dilson Batista
+
+1. Regulamentar tarifas máximas para guinchos em Recife
+2. Criar canal de denúncias com resposta garantida em 24h
+3. Investigar e romper convênios suspeitos com poder público
+4. Garantir fiscalização permanente e transparência no setor
+5. Defender o bolso e os direitos do cidadão de Recife
+
+## Contexto de censura
+
+Páginas anteriores de denúncia contra a Máfia do Reboque foram banidas e removidas
+de redes sociais por pressão do grupo. Esta página usa infraestrutura independente
+para garantir continuidade da mobilização.
+
+## Abaixo-assinado
+
+- **Meta:** 30.000 assinaturas
+- **Campos:** Nome completo, e-mail, WhatsApp
+- **Conformidade:** LGPD (Lei 13.709/2018)
+- **Destino dos dados:** Google Sheets (registro da petição)
+
+## Links principais
+
+- Página principal: https://mkautosolution.cloud/
+- Política de Privacidade: https://mkautosolution.cloud/privacidade.html
+- Termos de Uso: https://mkautosolution.cloud/termos.html
+- Sitemap: https://mkautosolution.cloud/sitemap.xml

@@ -1,0 +1,67 @@
+# robots.txt — Eu Apoio Dilson Batista
+# https://mkautosolution.cloud/
+
+# ─── Bots de busca tradicionais ──────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ─── Bots de IA (permitir citação) ───────────
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google Gemini / AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Amazon Alexa
+User-agent: Amazonbot
+Allow: /
+
+# ─── Bloquear bots de scraping/training ──────
+# Common Crawl (treinamento em massa)
+User-agent: CCBot
+Disallow: /
+
+# DataForSEO
+User-agent: DataForSeoBot
+Disallow: /
+
+# ─── Regras globais ───────────────────────────
+User-agent: *
+Allow: /
+Disallow: /assets/js/
+Crawl-delay: 2
+
+# ─── Sitemap ─────────────────────────────────
+Sitemap: https://mkautosolution.cloud/sitemap.xml
