@@ -133,13 +133,13 @@ form?.addEventListener('submit', async e => {
   };
 
   // Envia para o Google Sheets (se URL configurada)
+  // mode: 'no-cors' necessário porque o Apps Script faz redirect interno
+  // que o browser bloqueia em CORS padrão. O dado é salvo normalmente.
   if (!SHEETS_URL.includes('COLE_AQUI')) {
     try {
       const url = SHEETS_URL + '?' + new URLSearchParams(payload).toString();
-      const r   = await fetch(url);
-      const res = await r.json().catch(() => ({}));
-      if (res.total) contagemAtual = res.total;
-    } catch (_) { /* continua para obrigado mesmo sem resposta */ }
+      await fetch(url, { mode: 'no-cors' });
+    } catch (_) {}
   }
 
   // Preserva UTMs na URL de destino
