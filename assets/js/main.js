@@ -5,7 +5,7 @@
 
 // ─── CONFIG ───────────────────────────────────
 // Substitua pela URL do seu Google Apps Script após publicar
-const SHEETS_URL = 'COLE_AQUI_A_URL_DO_GOOGLE_APPS_SCRIPT';
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxWp3kQiNuCGdwmXC1QX7qqEOdFvfWCK6Oz8R015QX4XnB26itxAUwzM73gX042Tu1e6g/exec';
 
 const META_ASSINATURAS = 30000;
 let contagemAtual = 247; // valor de fallback enquanto o Sheets não está conectado
