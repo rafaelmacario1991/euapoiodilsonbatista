@@ -1,12 +1,12 @@
 # =============================================
-# deploy.ps1 — Dilson Batista · mkautosolution.cloud
+# deploy.ps1 — Dilson Batista · euapoiodilsonbatista.com.br
 # Sincroniza arquivos estáticos com o VPS via SCP
 # Uso: .\deploy\deploy.ps1
 # =============================================
 
 $KEY      = "$env:USERPROFILE\.ssh\mkreport_vps"
 $VPS      = "root@72.62.10.198"
-$DOMAIN   = "mkautosolution.cloud"
+$DOMAIN   = "euapoiodilsonbatista.com.br"
 $SITE_DIR = "/var/www/$DOMAIN"
 $LOCAL    = Split-Path $PSScriptRoot -Parent
 

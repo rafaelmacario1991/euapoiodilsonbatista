@@ -1,5 +1,5 @@
 # robots.txt — Eu Apoio Dilson Batista
-# https://mkautosolution.cloud/
+# https://euapoiodilsonbatista.com.br/
 
 # ─── Bots de busca tradicionais ──────────────
 User-agent: Googlebot
@@ -64,4 +64,4 @@ Disallow: /assets/js/
 Crawl-delay: 2
 
 # ─── Sitemap ─────────────────────────────────
-Sitemap: https://mkautosolution.cloud/sitemap.xml
+Sitemap: https://euapoiodilsonbatista.com.br/sitemap.xml
