@@ -132,14 +132,16 @@ form?.addEventListener('submit', async e => {
     timestamp: new Date().toISOString(),
   };
 
-  // Envia para o Google Sheets (se URL configurada)
-  // mode: 'no-cors' necessário porque o Apps Script faz redirect interno
-  // que o browser bloqueia em CORS padrão. O dado é salvo normalmente.
+  // Envia para o Google Sheets via image beacon
+  // Mesma técnica dos pixels de rastreamento: GET via <img>, sem restrição CORS,
+  // sem depender de redirect do Apps Script, dispara e aguarda antes de redirecionar.
   if (!SHEETS_URL.includes('COLE_AQUI')) {
-    try {
-      const url = SHEETS_URL + '?' + new URLSearchParams(payload).toString();
-      await fetch(url, { mode: 'no-cors' });
-    } catch (_) {}
+    await new Promise((resolve) => {
+      const beacon = new Image();
+      beacon.onload = beacon.onerror = resolve;
+      beacon.src = SHEETS_URL + '?' + new URLSearchParams(payload).toString();
+      setTimeout(resolve, 3000); // fallback: segue mesmo se não responder em 3s
+    });
   }
 
   // Preserva UTMs na URL de destino
