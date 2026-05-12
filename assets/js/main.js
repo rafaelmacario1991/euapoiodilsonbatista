@@ -153,7 +153,16 @@ form?.addEventListener('submit', async e => {
   const destino =
     `obrigado.html?nome=${encodeURIComponent(nome)}${utmString ? '&' + utmString : ''}`;
 
-  window.location.href = destino;
+  // Dispara evento Lead no Meta Pixel e aguarda 300ms para enviar antes de redirecionar
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead', {
+      content_name: 'Abaixo-Assinado Dilson Batista',
+      content_category: 'Petição',
+    }, { eventID: `lead_${Date.now()}` });
+    setTimeout(() => { window.location.href = destino; }, 300);
+  } else {
+    window.location.href = destino;
+  }
 });
 
 // ─── STICKY CTA ───────────────────────────────
